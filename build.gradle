@@ -27,6 +27,14 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter'
 }
 
+dependencies {
+    implementation 'org.eclipse.jetty:jetty-server:11.0.15'
+    implementation 'org.eclipse.jetty:jetty-servlet:11.0.15'
+    implementation 'javax.servlet:javax.servlet-api:4.0.1'
+    implementation 'commons-io:commons-io:2.11.0' // Utility for file handling
+    testImplementation 'junit:junit:4.13.2'
+}
+
 tasks.register('firstTask') {
     println 'First one'
     println()
@@ -46,4 +54,8 @@ tasks.register('myTask') {
 
 test {
     useJUnitPlatform()
+}
+
+tasks.named('test') {
+    useJUnit()
 }
